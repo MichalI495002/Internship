@@ -104,10 +104,10 @@
     hlines,
     vlines,
   }
-   Date & Date \\ 
-   Version  & Version \\        
-   Status  & Status \\           
-   Author  & Author \\           
+   Date  & 04-03-2024 \\ 
+   Version  & 0.1 \\        
+   Status  & In Progress \\           
+   Author  & Michal Raczkowski\\           
   \end{tblr}
 \end{table}
 \end{titlepage}
@@ -127,7 +127,7 @@
       vlines,
     }
     \textbf{Version} & \textbf{Date} & \textbf{Author} & \textbf{Amendments} & \textbf{Status} \\
-                  &             &    &   \\
+             0.1     &      04-03-2024       &   Michał Raczkowski  &  - & In Progress \\ 
                    &            & &  \\
   
     \end{tblr}
@@ -145,7 +145,7 @@
       vlines,
     }
     \textbf{Version} & \textbf{Date} & \textbf{To} \\
-                  &           &     \\
+        0.1          &       04-03-2024  &     \\
                     &             & \\
   
     \end{tblr}
@@ -165,42 +165,76 @@
 
 
 \subsection{Context}
-Briefly describe the company and the context of the assignment.Provide information about the products and services of the company that your assignment focuses on. If you work for an external client of your client  think of a client of an internship company describe them in the same way. In addition, indicate the concrete reason for the assignment and what developments are taking place in the company or the market that lead to the assignment
+Alltrons is a premier research and development partner, specializing in transforming ideas into scalable products. With a focus on IoT and robotics, Alltrons leverages a diverse team of specialists across UI/UX design, software development (including frontend, backend, and embedded systems), electrical engineering, mechanics, and business strategy. This multidisciplinary approach eliminates the need for companies to engage multiple parties or expand internal teams for R\&D projects. Alltrons embodies innovation, providing comprehensive solutions from concept development to production, streamlining the path from ideation to market-ready products.
+
 \subsection{Goal of the project}
-Describe the goal of the project here. Think of:
-What is the problem that needs to be solved or what is the opportunity that needs to be used?
-What does the desired situation look like?
-What benefits does the project offer?
-What possibilities (capabilities, facilities) does the product or project result offer?
+The goal of this project is to evolve our current IoT solution framework from being based on general-purpose, Linux-based devices (like Raspberry Pi) to a more specialized, embedded architecture (using chips such as Quectel, SIMCom, or nRF52840). This evolution includes creating a desktop application dedicated to programming the new embedded hardware, enabling Over-The-Air (OTA) updates for seamless, future-proof upgrades.
 \smallbreak
-NB To make your goals as concrete as possible, you should already have a good idea of the problem. What exactly is the issue? What is the problem to be solved or what is the challenge? Why is this question there? What is the urgency? What caused it? What are the consequences if nothing is done? And what has already been done to arrive at an answer? It is essential that you look critically at the client's needs. Is the problem outlined actually the problem? And is your client's question actually the right solution? Ask critical questions and try to arrive at the correct problem statement together with the client. If more research is needed to determine this, include this in your approach.
+The motivation behind this transition is driven by the necessity for a solution that is not only more cost-efficient but also superior in terms of energy and resource efficiency. The move away from a Linux-based framework allows us to address these needs while expanding our potential client base. Embedded systems offer a targeted approach to IoT development, aligning with the market's demand for leaner, more efficient technologies.
+\smallbreak
+The desktop application will play a pivotal role in this project, offering users the ability to configure embedded devices through a USB interface for initial setups such as GSM provider preferences, server connections, and network configurations. It's crucial to note that while the application facilitates initial device programming and configuration, the OTA update mechanism operates independently of this utility.
+\smallbreak
+This project's overarching aim is to refine our IoT solutions' efficiency and market applicability, positioning us to cater to a broader array of client needs with a more refined, cost-effective, and technologically advanced development framework.
+
 \subsection{The assignment}
-Formulate the assignment. The assignment definition itself should consist of a text that is as short aand concise as possible in which the assignment is clearly formulated. What are the specific requirements/wishes of the client at the start of the project? What are the minimum (quality) requirements that the end result must meet? You may already provide a list of functional and non-functional requirements for the end product as an attachment>
+The assignment involves creating a desktop application designed for the configuration and adjustment of embedded devices within our existing infrastructure. This application will serve as a pivotal tool for deploying a wide range of IoT solutions. The primary function of this desktop application is to provide a user-friendly interface for configuring embedded hardware, tailored to the specific needs of various IoT applications.
+
 \subsection{Scope}
-Indicate the scope.If necessary, make a context diagram for clarification that shows the relationships with other systems and the environment.This section should also describe what will not be delivered.For example, if you agree to deliver a high fidelity prototype, then (part of) the implementation and management falls outside your scope.
-Make this as concrete as possible so that there are no misunderstandings between you and your client.
-\definecolor{Silver}{rgb}{0.752,0.752,0.752}
-\begin{table}[h]
-    \centering
-    \begin{tblr}{
-      width = \linewidth,
-      colspec = {Q[45]Q[50]},
-      hlines,
-      vlines,
-      cell{1}{2} = {Silver},
-    }
-    \textbf{The project includes:} & \textbf{The project does not include:}  \\
-              1.    &               \\
-               2.     &              \\
-  
-    \end{tblr}
+
+
+Scope of the project:
+  \definecolor{Silver}{rgb}{0.752,0.752,0.752}
+  \begin{table}[h]
+  \centering
+  \begin{tblr}{
+    width = \linewidth,
+    colspec = {Q[334]Q[280]},
+    cell{1}{2} = {Silver},
+    hlines,
+    vlines,
+  }
+  Includes                                                                            & Excludes                                                                \\
+  Design and development of the desktop application for embedded device configuration & Development of the OTA update mechanism (handled separately)            \\
+  Integration with existing embedded hardware platforms                               & Creation of new embedded devices or hardware modifications              \\
+  USB interface development for device configuration                                  & Long-term maintenance and support beyond initial deployment             \\
+  User interface design for easy navigation and operation                             & evelopment of additional applications for other platforms (mobile, web) \\
+  Testing and deployment of the application                                           & Expansion to non-IoT embedded systems or unrelated hardware             \\
+  Documentation                                                                       &                                                                         
+  \end{tblr}
   \end{table}
+
+
 \subsection{Conditions}
-Indicate, where necessary, what the preconditions are.For example, consider technology set by the company.Note that a critical attitude remains important here!>
+The preferred frontend framework should be \textbf{React} because it is the main frontend framework used within the company.
 \subsection{Finished products}
 A Product Breakdown Structure of the end and intermediate products that the project will deliver with a short description in text of each product.The end products are more than the project plan and the product itself.Also, for example, requirements and architecture documents and research and test reports are typical parts of a PBS.These documents are important for the relevant stakeholders during development as well as during the transfer and during the management phase.During the project you can change the PBS and you can add or remove products in consultation
+\pagebreak
 \subsection{Research questions}
-Describe the most important research questions you want to answer during your internship. Define a main question with sub-questions derived from it.Keep in mind that you will be doing investigative work during your entire internship, and that your questions will therefore concern your entire trajectory.During your internship/graduation, more research questions may be of interest and others may turn out to be less relevant.Describe only the key research questions that will have the greatest impact on your project.Other research aspects can be elaborated in more detail during your internship and can then be explained with a short substantiation in your portfolio or orally
+To ensure the successful development and deployment of the desktop application for configuring and adjusting existing infrastructure embedded devices for IoT solutions, the following research questions have been identified as critical:
+\begin{enumerate}
+  \item \textbf{Compatibility and Integration}:
+  \begin{itemize}
+    \item What are the primary technical challenges in achieving seamless compatibility between the desktop application and a wide range of embedded devices (e.g., Quectel, SIMCom, nRF52840)?
+    \item How can the application support diverse IoT solutions and configurations
+\end{itemize}
+  \item \textbf{Interface Design}:
+  \begin{itemize}
+    \item How can the application provide a streamlined process for configuring critical parameters (GSM provider, server, network settings) via USB interface?
+    \item How to design a user interface that simplifies the configuration process for users with varying levels of technical expertise?
+\end{itemize}
+  \item \textbf{Security}:
+  \begin{itemize}
+    \item What security measures are necessary to protect the configuration process and sensitive device settings from unauthorized access?
+    \item How can the application support diverse IoT solutions and configurations
+\end{itemize}
+  \item \textbf{Technical Feasibility and Development Strategy}:
+  \begin{itemize}
+    \item What development frameworks and technologies are most suited for building a cross-platform desktop application that meets the project's requirements?
+    \item How can the project leverage existing infrastructure and tools to accelerate development and reduce costs?
+\end{itemize}
+\end{enumerate}
+
+
 \section{Approach and Plannings}
 \subsection{Approach}
 Indicate here which method you follow in your project plan, for example whether you use a waterfall or scrum method.also indicate how you will approach the problem definition phase and completion phase. With a scrum approach you can think of length of sprints, set-up of your sprints, stand-up, set-up of demos, retrospective, etc.
@@ -233,19 +267,24 @@ Also make sure that you reserve enough time for your portfolio and start on time
 \section{Project Organization}
 \subsection{Team members}
 Describe the organization of the project with its immediate environment. An organization chart can be displayed for clarification. Indicate in descriptive form which roles are included in the organization chart with the associated authorities and responsibilities. It must be clear who is authorized to do what and what can be expected of whom. Indicate who is involved in your project and what his/her function is and what the role is within your project. For example, someone with the function 'manager of department X' can have the role of Product Owner in your project. In this project, both the internship/graduation organization and Fontys are stakeholders. So include your internship teachers and yourself in this schedule.
+\definecolor{GrayNickel}{rgb}{0.752,0.749,0.737}
 \begin{table}[H]
-    \centering
-    \begin{tblr}{
-      width = \linewidth,
-      colspec = {Q[50]Q[20]Q[50]Q[50]},
-      hlines,
-      vlines,
-    }
-    \textbf{Name + Phone + e-mail} & \textbf{Abbr.} & \textbf{Role/tasks} & \textbf{Availability}  \\
-    Contact details   &      Sometimes it is useful to indicate a role or person with an abbreviation & Mention the role or any specific tasks & What availability of the person is necessary (e.g. 3 days a week, during phase 2)         \\
-
-    \end{tblr}
-  \end{table}
+\centering
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[320]Q[230]Q[280]},
+  row{1} = {GrayNickel},
+  hlines,
+  vlines,
+}
+Name + Phone + e-mail                                                                & Role/tasks                  & Availability                             \\
+{Kayle Knops\\kayle.knops@alltrons.com}                                              & CEO/Control                 & 1 hour/week                              \\
+{Luis Pellicer Collado\\\textit{}luis.pellicer@alltrons.com}                         & Tech Lead Embedded Software & About 3 hours per week,~depends on needs \\
+{Kamyar Khodayari\\kamyar.khodayari@alltrons.com}                                    & System Solution Architect   & 1 hour/week~depends on needs             \\
+{Schürgers,Frank F.P.\\f.schurgers@fontys.nl}                                        & University coach            &                                          \\
+{Michal Raczkowski\\m.raczkowski@student.fontys.nl\\michael.raczkowski@alltrons.com} & Intern                      & 40h/week                                 
+\end{tblr}
+\end{table}
 
   \subsection{Communication}
   Indicate which communication/attunements there are. Think of coordination with company supervisor, teacher supervisor and other stakeholders. How and how often do these attunements take place?
