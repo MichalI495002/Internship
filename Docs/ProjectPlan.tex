@@ -47,7 +47,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\headheight}{15pt}
-\rhead{\fontfamily{qag}\fontsize{10pt}{12pt}\selectfont\color{MSGray} 04.06.23}
+\rhead{\fontfamily{qag}\fontsize{10pt}{12pt}\selectfont\color{MSGray} 08-03-2024 - 0.1v}
 \lhead[]{}
 \fancyfoot[C]{\fontsize{10pt}{10pt}\selectfont\thepage} 
 
@@ -82,10 +82,10 @@
 	\vspace*{.15\textheight}
 	\medbreak
 	{\fontfamily{qag}\Huge\bfseries\color{MSBlue}Project Plan\par}
-    {\fontfamily{qag}\LARGE\bfseries<<Project Name>>\par}
+    {\fontfamily{qag}\LARGE\bfseries OpenSTS \par}
 	\bigbreak
-    {\fontfamily{qag}\LARGE<<Client>>\par}
-    {\fontfamily{qag}\large<<City>>\par}
+    {\fontfamily{qag}\LARGE Alltrons \par}
+    {\fontfamily{qag}\large Eindhoven\par}
 
 
     \bigbreak
@@ -168,7 +168,7 @@
 Alltrons is a premier research and development partner, specializing in transforming ideas into scalable products. With a focus on IoT and robotics, Alltrons leverages a diverse team of specialists across UI/UX design, software development (including frontend, backend, and embedded systems), electrical engineering, mechanics, and business strategy. This multidisciplinary approach eliminates the need for companies to engage multiple parties or expand internal teams for R\&D projects. Alltrons embodies innovation, providing comprehensive solutions from concept development to production, streamlining the path from ideation to market-ready products.
 
 \subsection{Goal of the project}
-The goal of this project is to evolve our current IoT solution framework from being based on general-purpose, Linux-based devices (like Raspberry Pi) to a more specialized, embedded architecture (using chips such as Quectel, SIMCom, or nRF52840). This evolution includes creating a desktop application dedicated to programming the new embedded hardware, enabling Over-The-Air (OTA) updates for seamless, future-proof upgrades.
+The goal of this project is to evolve our current IoT solution framework from being based on general-purpose, Linux-based devices (like Raspberry Pi) to a more specialized, embedded architecture (using chips such as nRF9160, or nRF52840). This evolution includes creating a desktop application dedicated to programming the new embedded hardware, enabling Over-The-Air (OTA) updates for seamless, future-proof upgrades.
 \smallbreak
 The motivation behind this transition is driven by the necessity for a solution that is not only more cost-efficient but also superior in terms of energy and resource efficiency. The move away from a Linux-based framework allows us to address these needs while expanding our potential client base. Embedded systems offer a targeted approach to IoT development, aligning with the market's demand for leaner, more efficient technologies.
 \smallbreak
@@ -197,7 +197,7 @@ Scope of the project:
   Design and development of the desktop application for embedded device configuration & Development of the OTA update mechanism (handled separately)            \\
   Integration with existing embedded hardware platforms                               & Creation of new embedded devices or hardware modifications              \\
   USB interface development for device configuration                                  & Long-term maintenance and support beyond initial deployment             \\
-  User interface design for easy navigation and operation                             & evelopment of additional applications for other platforms (mobile, web) \\
+  User interface design for easy navigation and operation                             & Development of additional applications for other platforms (mobile, web) \\
   Testing and deployment of the application                                           & Expansion to non-IoT embedded systems or unrelated hardware             \\
   Documentation                                                                       &                                                                         
   \end{tblr}
@@ -207,14 +207,26 @@ Scope of the project:
 \subsection{Conditions}
 The preferred frontend framework should be \textbf{React} because it is the main frontend framework used within the company.
 \subsection{Finished products}
-A Product Breakdown Structure of the end and intermediate products that the project will deliver with a short description in text of each product.The end products are more than the project plan and the product itself.Also, for example, requirements and architecture documents and research and test reports are typical parts of a PBS.These documents are important for the relevant stakeholders during development as well as during the transfer and during the management phase.During the project you can change the PBS and you can add or remove products in consultation
-\pagebreak
+A Product Breakdown Structure of the end and intermediate products that the project will deliver with a short description in text of each product. The end products are more than the project plan and the product itself. Also, for example, requirements and architecture documents and research and test reports are typical parts of a PBS. These documents are important for the relevant stakeholders during development as well as during the transfer and during the management phase. During the project you can change the PBS and you can add or remove products in consultation
+
+\begin{enumerate}
+  \item \textbf{Desktop Application for Embedded Device Configuration}: A fully functional desktop application tailored for configuring embedded IoT device. This tool will enable users to set up device via a USB interface, covering initial setups like preferences, server connections, and network configurations.
+  \item \textbf{Integration Modules}: Software components designed to ensure seamless integration between the desktop application and existing embedded hardware platform.
+
+  \item \textbf{USB Interface Development}: A robust USB interface for the desktop application, facilitating direct communication and configuration of embedded device.
+  
+  \item \textbf{User Interface (UI) Design}: UI for the application, designed to simplify the configuration process for users with varying levels of technical expertise.
+  
+  \item \textbf{Documentation}: Documentation covering the application's design supporting future developers.
+
+\end{enumerate}
+
 \subsection{Research questions}
 To ensure the successful development and deployment of the desktop application for configuring and adjusting existing infrastructure embedded devices for IoT solutions, the following research questions have been identified as critical:
 \begin{enumerate}
   \item \textbf{Compatibility and Integration}:
   \begin{itemize}
-    \item What are the primary technical challenges in achieving seamless compatibility between the desktop application and a wide range of embedded devices (e.g., Quectel, SIMCom, nRF52840)?
+    \item What are the primary technical challenges in achieving seamless compatibility between the desktop application and a wide range of embedded devices (e.g. nrf9160, nRF52840)?
     \item How can the application support diverse IoT solutions and configurations
 \end{itemize}
   \item \textbf{Interface Design}:
@@ -234,18 +246,58 @@ To ensure the successful development and deployment of the desktop application f
 \end{itemize}
 \end{enumerate}
 
-
+\pagebreak
 \section{Approach and Plannings}
 \subsection{Approach}
-Indicate here which method you follow in your project plan, for example whether you use a waterfall or scrum method.also indicate how you will approach the problem definition phase and completion phase. With a scrum approach you can think of length of sprints, set-up of your sprints, stand-up, set-up of demos, retrospective, etc.
+Our project adopts an Agile methodology, concentrating on the development of a desktop application for configuring embedded IoT devices. Key steps include:
+\begin{itemize}
+  \item \textbf{Agile Development}: Work is divided into two-week sprints, focusing on incremental progress and flexibility to adapt to project needs.
+  \item \textbf{CI/CD Implementation}: We'll use Continuous Integration for automated testing to maintain code quality and Continuous Deployment for streamlined updates, aligning with our objective to deliver a user-friendly configuration tool.
+  \item \textbf{Technology Choices}: React will be used for the frontend to comply with company standards. Backend and USB integration will prioritize compatibility with embedded platforms like nRF9160 and nRF52840.
+  \item \textbf{Scope Considerations}: Excludes OTA update mechanism development, focusing instead on USB configuration capabilities and user interface design for ease of use.
+  \item \textbf{Final Deliverables}:Emphasize testing, deployment, and documentation to ensure a comprehensive and reliable application.
+\end{itemize}
+This streamlined approach ensures the project remains focused on its core goal: creating a desktop application that simplifies embedded device configuration within our specified scope.
 \subsubsection{Test approach}
-If applicable: how is testing designed. What is the approach? And why? Also include any approach to (Code) reviews in this
+A blend of manual and automated tests will ensure functionality and user experience, supported by code quality reviews.
 \subsection{Research methods}
-Describe (per research question and for the entire project) which methods (see ictresearchmethods.nl or cmdmethods.nl) you will use to answer the most important questions within your project (= how you will substantiate the most important choices).Do not only mention the method, but also briefly explain how you will use it (e.g. who will you interview and for what purpose?).Of course, your approach can still be adjusted during your internship
-\subsection{Learning outcomes}
-Discuss how you are going to demonstrate each learning outcome in the project. The easiest way is to think about which of the professional products you are going to use as evidence for each of the learning outcomes.
-\subsection{Breakdown of the project}
-Show the rough breakdown in phases or sprints of the project here
+Research methods from the DOT framework that will be used in the project:
+\begin{itemize}
+  \item \textbf{Library}:
+  \begin{itemize}
+    \item \textbf{Benchmark creation}: Comparing different technologies and hardware to find the best fit for the project's goals and cost-effectiveness.
+    \item\textbf{Best, good \& bad practices}: Using the best practices of software development adapted accordingly, which technology is used to create reliable and readable software
+    \item \textbf{Design Pattern Search}:Applying design patterns while developing software to keep it structured, which will ensure expendability and flexibility 
+    \item \textbf{Expert Interview}: Conversations with specialists within and outside the company to gather knowledge about the usage and best fit of technology.
+  \end{itemize}
+  \pagebreak
+  \item \textbf{Field}:
+  \begin{itemize}
+    \item \textbf{Explore user requirements}: Discussing with stakeholders about the final usage of the application, its purpose, and the plan for future development.
+    \item\textbf{Domain modelling}: Discussing with stakeholders about usage, target group, previous usage, and the current state of the project to fully understand the application of software in the field and its goals
+    \item \textbf{Problem analysis}: Discussing with stakeholders about what improvements and problems need to be solved to achieve the desired functionalities.
+  \end{itemize}
+  \item \textbf{Lab}: 
+  \begin{itemize}
+    \item \textbf{Component test}: Testing each component of the solution: UI, backend of the desktop application, software responsible for connection with hardware, and firmware of the hardware.
+    \item\textbf{Hardware validation}: Validating if the choice of hardware is suitable for our solutions, and it has the ability to fulfill the needs and requirements of the project, also validating its capabilities and compatibility.
+    \item \textbf{Non-functional test}: Checking software under its adaptation for extensibility and readability in a way that can be developed in the future by others. Also, checking its performance.
+    \item \textbf{Security test}: Preventing unauthorized access and modification to software. Applying techniques to prevent unauthorized access, modification, and reading of code
+    \item \textbf{System test}: Check if every functionality works before deployment
+    \item  \textbf{Unit test}: Implementation of unit testing in the codebase of software, but also testing each component separately (UI, backend, firmware).
+  \end{itemize}
+  \item \textbf{Showroom}: 
+  \begin{itemize}
+    \item \textbf{Static program analysis}:  Impression of how well your code is written and trying to find security variables and weak spots 
+    \item\textbf{Peer review}: Feedback and assessment of software by peers
+  \end{itemize}
+  \item \textbf{Workshop}: 
+  \begin{itemize}
+    \item \textbf{Proof of Concept}: Creating a proof of concept to demonstrate that basic functionalities are achievable using the chosen tools, hardware, and architecture.
+    \item\textbf{Prototyping}: Creating prototypes to evaluate functionalities and adjusting requirements accordingly based on testing the prototype.
+  \end{itemize}
+\end{itemize}
+
 \subsection{Time plan}
 Depending on your project method, you will be able to work out the phasing in more or less detail. Below is a possible table that you can use for this.
 Note that with an agile approach, most projects still have a problem analysis/orientation phase (or 'sprint 0'), as well as a completion/evaluation phase.
@@ -266,7 +318,6 @@ Also make sure that you reserve enough time for your portfolio and start on time
   \end{table}
 \section{Project Organization}
 \subsection{Team members}
-Describe the organization of the project with its immediate environment. An organization chart can be displayed for clarification. Indicate in descriptive form which roles are included in the organization chart with the associated authorities and responsibilities. It must be clear who is authorized to do what and what can be expected of whom. Indicate who is involved in your project and what his/her function is and what the role is within your project. For example, someone with the function 'manager of department X' can have the role of Product Owner in your project. In this project, both the internship/graduation organization and Fontys are stakeholders. So include your internship teachers and yourself in this schedule.
 \definecolor{GrayNickel}{rgb}{0.752,0.749,0.737}
 \begin{table}[H]
 \centering
@@ -280,52 +331,50 @@ Describe the organization of the project with its immediate environment. An orga
 Name + Phone + e-mail                                                                & Role/tasks                  & Availability                             \\
 {Kayle Knops\\kayle.knops@alltrons.com}                                              & CEO/Control                 & 1 hour/week                              \\
 {Luis Pellicer Collado\\\textit{}luis.pellicer@alltrons.com}                         & Tech Lead Embedded Software & About 3 hours per week,~depends on needs \\
-{Kamyar Khodayari\\kamyar.khodayari@alltrons.com}                                    & System Solution Architect   & 1 hour/week~depends on needs             \\
+{Kamyar Khodayari\\kamyar.khodayari@alltrons.com}                                    & System Architect   &  depends on needs             \\
 {Schürgers,Frank F.P.\\f.schurgers@fontys.nl}                                        & University coach            &                                          \\
 {Michal Raczkowski\\m.raczkowski@student.fontys.nl\\michael.raczkowski@alltrons.com} & Intern                      & 40h/week                                 
 \end{tblr}
 \end{table}
 
-  \subsection{Communication}
-  Indicate which communication/attunements there are. Think of coordination with company supervisor, teacher supervisor and other stakeholders. How and how often do these attunements take place?
-  \subsection{Test environment}
-  omit this section if not applicable
-  \smallbreak
-  Describe what the test environment looks like. A picture generally gives the best overview. Also record to what extent you use a CI/CD environment (self-developed or using an existing system)
-  \smallbreak
-  Describe which products are included in the test environment. These can be products that the project produces, but also external products that are necessary to perform the test approach (e.g. computers)
-  \subsection{Configuration management}
-  omit this section if not applicable
-
-  \smallbreak
-  Describe how the archive is set up (for example your GIT repository structure with branching strategy). Pictures about, for example, your branching strategy can help with this. If possible, describe which baselines and releases you foresee
+  \subsection{Communication} 
+  Effective communication is pivotal to the success of this project, ensuring company supervisor, teacher supervisor and other stakeholders are aligned and informed throughout the project lifecycle. Communication strategy includes:
+  \begin{itemize}
+    \item \textbf{Regular meetings}: Weekly meetings will be held to review progress, discuss challenges, and plan for the upcoming weeks. These meetings will include the company supervisor, company mentor, and others invested in the project.
+    \item\textbf{Development Updates}: Continuous Integration and Deployment (CI/CD) practices will facilitate real-time updates on development progress. This will ensure immediate feedback and transparency in development cycles.
+    \item \textbf{Documentation and Reporting}: Documentation will be maintained and updated regularly, including technical documentation and project reports. Access to this documentation will be provided to company supervisor and teacher supervisor.
+    \item  \textbf{Feedback Mechanism}:An open feedback mechanism will be established to collect input from company supervisor and teacher supervisor testing phases. This will help in refining the product according to needs and preferences.
+  \end{itemize}
 
 
 
-\section{Finance and Risks}
-\subsection{Cost budgets}
-If specific costs have to be incurred for your project, please indicate these. Think of extra hardware or software investments. Regular matters such as workplace, your internship allowance, etc. do not have to be included.
+\section{Risks}
 \subsection{Risks and fall-back activities}
-Define risks. What have you already included in the plan to limit or prevent the risk? What choice is made if the risk does unexpectedly occur? Think of organizational risks (such as the sudden leave of the company supervisor) as well as more substantive risks (for example, what to do if you find out during your internship that it is better for the company to purchase an external application instead of the application to be developed)
-\smallbreak
-Think of real risks that can actually influence your project. For example, there may be a risk that your company supervisor will be absent, for example due to illness or because he is going to do something else. Is there a backup in the company
-\begin{table}[H]
-    \centering
-    \begin{tblr}{
-      width = \linewidth,
-      colspec = {Q[50]Q[50]Q[50]},
-      hlines,
-      vlines,
-    }
-    \textbf{Risk} & \textbf{Prevention activities included in plan} & \textbf{Fall-back Activities}  \\
-      1 &       &        \\
-      2 &       &        \\
-      3 &       &        \\
 
-    \end{tblr}
-  \end{table}
-  \section{Other}
-  Describe here everything that is relevant but that you cannot put elsewhere in the document
+  \begin{enumerate}
+    \item \textbf{Technical Compatibility Risks}: Risk of incomplete compatibility with embedded devices, leading to integration challenges.
+    \begin{itemize}
+      \item \textbf{Prevention}: Early compatibility testing of hardware.
+      \item\textbf{Fallback}: Modular architecture for easy updates addressing compatibility issues.
+  \end{itemize}
+    \item \textbf{Security Vulnerabilities}: Risk of security flaws.
+    \begin{itemize}
+      \item \textbf{Prevention}: Security assessments and penetration testing in CI/CD.
+      \item\textbf{Fallback}: Emergency plan for quick vulnerability patching.
+  \end{itemize}
+    \item \textbf{Project Delays}: Risk of delays due to unexpected technical issues or resource constraints.
+    \begin{itemize}
+      \item \textbf{Prevention}: Agile methodology with buffer periods for unforeseen tasks.
+      \item\textbf{Fallback}: Prioritize core functionalities and reassess project milestones.
+  \end{itemize}
+    \item \textbf{Insufficient Knowledge}: The risk that the intern may lack adequate knowledge in specific technical areas, impacting development efficiency and product quality.
+    \begin{itemize}
+      \item \textbf{Prevention}: Identify knowledge gaps early and plan for targeted training sessions.
+      \item\textbf{Fallback}: Adjust project timelines to accommodate learning curves or reassign tasks to intern.
+  \end{itemize}
+  \end{enumerate}
+  By proactively addressing these risks with appropriate preventive measures and fallback plans, the project is better equipped to navigate potential obstacles and move towards successful completion.
+
 
 
 \end{document}
